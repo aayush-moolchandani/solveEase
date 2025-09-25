@@ -85,3 +85,30 @@ This assignment is designed to assess your practical skills in **React, Next.js,
 - Document any **extra improvements** you make in your submission.
 
 Good luck 🚀  
+
+---
+
+## Local Development
+
+### Prerequisites
+- Node 18+
+
+### Setup
+```bash
+npm ci
+npm run dev
+```
+
+App runs at `http://localhost:3000`.
+
+### Implemented Features
+- Sticky navbar in `src/app/components/Navbar.tsx` included via `src/app/layout.tsx`.
+- Card grid redesigned, responsive across breakpoints.
+- API: `/api/wprkers` serves `workers.json` (alias maintained per assignment).
+- Workers page now fetches via SWR with caching, skeletons, and error states.
+- Filters: by service and price range; integrated with pagination (12/page).
+- Performance: images lazy-loaded; components memoized; deduped network calls.
+
+### Notes
+- Original inline JSON import kept commented in `src/app/page.tsx`.
+- Fixed render-time state update anti-pattern with `useEffect`.
