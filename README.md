@@ -88,27 +88,31 @@ Good luck 🚀
 
 ---
 
-## Local Development
+## Local development
 
-### Prerequisites
+### Requirements
 - Node 18+
 
-### Setup
+### Getting started
 ```bash
+# install exact versions
 npm ci
+
+# start the app
 npm run dev
 ```
 
-App runs at `http://localhost:3000`.
+Open `http://localhost:3000`.
 
-### Implemented Features
-- Sticky navbar in `src/app/components/Navbar.tsx` included via `src/app/layout.tsx`.
-- Card grid redesigned, responsive across breakpoints.
-- API: `/api/wprkers` serves `workers.json` (alias maintained per assignment).
-- Workers page now fetches via SWR with caching, skeletons, and error states.
-- Filters: by service and price range; integrated with pagination (12/page).
-- Performance: images lazy-loaded; components memoized; deduped network calls.
+### What’s included
+- Sticky, minimal navbar (always visible while scrolling)
+- Clean, responsive card grid for workers
+- API route `/api/wprkers` that serves `workers.json`
+- Data fetching with SWR (caching + deduping)
+- Loading skeletons and friendly error states
+- Filters: by service and by price range
+- Pagination: 12 items per page, works with filters
 
-### Notes
-- Original inline JSON import kept commented in `src/app/page.tsx`.
-- Fixed render-time state update anti-pattern with `useEffect`.
+### Implementation notes
+- Kept the original inline import logic as a comment in `src/app/page.tsx` as requested.
+- Replaced a render-time state update with `useEffect` to avoid React warnings.
